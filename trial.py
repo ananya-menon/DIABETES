@@ -74,7 +74,26 @@ X.head()
 y.head()
 # X[:] = scale.fit_transform(X[:])
 X.head()
+from sklearn.preprocessing import StandardScaler
+scale = StandardScaler() 
+from sklearn.preprocessing import MinMaxScaler 
+from sklearn.preprocessing import StandardScaler 
+scaler=StandardScaler()
+scaler.fit(data) 
+scaled_data=scaler.transform(data) 
+scaled_data  
+from sklearn.decomposition import PCA 
+
+pca=PCA(n_components=9) 
+
+pca.fit(scaled_data) 
+x_pca=pca.transform(scaled_data)
+scaled_data.shape 
+x_pca.shape  
+
 from sklearn.model_selection import train_test_split
+
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 def svm_classifier(X_train, X_test, y_train, y_test):
     
